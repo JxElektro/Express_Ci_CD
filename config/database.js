@@ -5,6 +5,8 @@ import { Sequelize } from 'sequelize';
 const db = new Sequelize('postgres', 'postgres', 'alcap1990', {
   host: 'localhost',
   dialect: 'postgres',
+  port: 5432,
+  logging: false,
   define: {
     timestamps: false
   }

@@ -3,10 +3,20 @@ import Dealership from '../models/dealership.js';
 
 
 
+// create a postgres table called dealership with the following columns and data types id - integer - primary key - auto increment ,name - string,address - string,city - string,createdAt - date - default value - current date, updatedAt - date - default value - current date
+
+
+
+
+
+
+
+
+
 //get all the dealerships
 export const getDealerships = (req, res) => {
   Dealership.findAll()
-    .then(dealerships => res.json(dealerships))
+    .then(dealerships => res.json({dealerships}))
     .catch(err => console.log(err));
 }
 

@@ -48,3 +48,14 @@ const Car = db.define(
 
 export default Car;
   
+
+// create a new car in the database json
+/*
+{
+  "make": "Toyota",
+  "model": "Corolla",
+  "year": 2019,
+  "price": 20000,
+  "dealershipId": 1
+}
+*/
