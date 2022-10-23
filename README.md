@@ -27,20 +27,6 @@
 
 11.- se probaron en en postman
 
+12.- se crearon 4 archivos de migracion
 
----------------------------------------------------------
-
-
-Migraciones
-
----------------------------------------
-
-Ideal 
-
-Sequilice
-
-express
-
-testing
-
----------------------------------------
+13.- se llenaron basado en los modelos
