@@ -1,15 +1,17 @@
-import { Sequelize } from 'sequelize';
+import { Sequelize } from "sequelize";
+import * as dotenv from 'dotenv';
+dotenv.config();
 
-// Create a Connection to the Database
-
-const db = new Sequelize('postgres', 'postgres', 'alcap1990', {
-  host: 'localhost',
-  dialect: 'postgres',
-  port: 5432,
-  logging: false,
-  define: {
-    timestamps: false
+const db = new Sequelize(
+  process.env.DB_NAME,
+  process.env.DB_USER,
+  process.env.DB_PASSWORD,
+  {
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    dialect: process.env.DB_DIALECT,
+    logging: false
   }
-});
+);
 
 export default db;

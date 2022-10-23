@@ -7,6 +7,8 @@ import db from "./config/database.js";
 // Import router
 import Router from "./routes/routes.js";
 
+
+
 // Import auth router
 //import authRouter from "./routes/auth.js";
 // Init express

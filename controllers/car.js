@@ -3,11 +3,14 @@ import Car from '../models/car.js';
 
 //get all the cars
 
-export const getCar = (req, res) => {
+export const getCar = async (req, res) => {
   try {
-    Car.findAll()
-      .then(cars => res.json(cars))
-      .catch(err => console.log(err));
+    const cars = await Car.findAll();
+  if(!cars) {
+    res.status(404).json({ message: 'No cars found' });
+    return; 
+  }
+  await res.status(200).json(cars);
   } catch (error) {
     console.log(error);
   }
@@ -15,72 +18,65 @@ export const getCar = (req, res) => {
 }
 
 //get a car by id
-export const getCarById = (req, res) => {
+export const getCarById = async (req, res) => {
   try {
-    Car.findByPk(req.params.id)
-      .then(car => res.json(car))
-      .catch(err => console.log(err));
+    const car = await Car.findByPk(req.params.id);
+  if(!car) {
+    res.status(404).json({ message: 'No car found with id: ' + req.params.id });
+    return;
+  }
+  await res.status(200).json(car);
   } catch (error) {
     console.log(error);
   }
-
 }
 
-
-export const addCar = (req, res) => {
-
+//add a car
+export const addCar = async (req, res) => {
   try {
-    const { make, model, year, price, dealershipId } = req.body;
-    Car.create({
-      make,
-      model,
-      year,
-      price,
-      dealershipId
-    })
-      .then(car => res.json(car))
-      .catch(err => console.log(err));
+    await Car.create(req.body);
+    res.json({ message: 'Car added successfully' });
   } catch (error) {
     console.log(error);
   }
-
 }
 
 //update a car
-export const updateCar = (req, res) => {
+export const updateCar = async (req, res) => {
   try {
-    const { make, model, year, price, dealershipId } = req.body;
-    Car.update({
-      make,
-      model,
-      year,
-      price,
-      dealershipId
-    }, {
-      where: {
-        id: req.params.id
-      }
-    })
-      .then(car => res.json(car))
-      .catch(err => console.log(err));
+    const car = await Car.findByPk(req.params.id);
+  if(!car) {
+    res.status(404).json({ message: 'No car found with id: ' + req.params.id });
+    return;
+  }
+  await Car.update(req.body, {
+    where: {
+      id: req.params.id
+    }
+  });
+  res.json({ message: 'Car updated successfully' });
   } catch (error) {
     console.log(error);
   }
-
 }
 
 //delete a car
-export const deleteCar = (req, res) => {
+export const deleteCar = async (req, res) => {
   try {
-    Car.destroy({
-      where: {
-        id: req.params.id
-      }
-    })
-      .then(car => res.json(car))
-      .catch(err => console.log(err));
+    const car = await Car.findByPk(req.params.id);
+  if(!car) {
+    res.status(404).json({ message: 'No car found with id: ' + req.params.id });
+    return;
+  }
+  await Car.destroy({
+    where: {
+      id: req.params.id
+    }
+  });
+  res.json({ message: 'Car deleted successfully' });
   } catch (error) {
     console.log(error);
   }
-
 }
+
+// Path: routes\car.js
