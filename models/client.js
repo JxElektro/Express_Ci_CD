@@ -6,31 +6,25 @@ import db from "../config/database.js";
 const { DataTypes } = sequelize;
 
 //define schema for the model with a automatic id
-const Car = db.define(
+const Client = db.define(
 //define atrributes
-  "car",
+  "client",
   {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
     },
-    make: {
+    name: {
       type: DataTypes.STRING
     },
-    model: {
+    email: {
       type: DataTypes.STRING
     },
-    year: {
-      type: DataTypes.INTEGER
-    },
-    price: {
-      type: DataTypes.INTEGER
-    },
-    dealershipid: {
+    carid: {
       type: DataTypes.INTEGER,
       references : {
-        model: 'dealership',
+        model: 'car',
         key: 'id'
       }
     },
@@ -43,9 +37,9 @@ const Car = db.define(
       defaultValue: sequelize.NOW
     }
   },
-  { tableName: "car" }
+  { tableName: "client" }
 );
 
-export default Car;
+export default Client;
   
 

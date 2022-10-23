@@ -14,9 +14,12 @@ const app = express();
 // use express json
 app.use(express.json());
 
-// var corsOptions = {
-//   origin: 'http://example.com',
-// }
+
+// use cors es el unico domino que puede acceder a la api
+/*var corsOptions = {
+  origin: "http://localhost:8080"
+};
+*/
 
 app.use(cors());
 

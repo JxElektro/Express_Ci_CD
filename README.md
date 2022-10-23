@@ -5,15 +5,13 @@
 
 Proximos pasos
 
-1 Probar Las rutas con Postman
+1 agregar algunos if de mensaje no encontrado
 
-2 Crear la Ruta Cliente
+2 Crear variables de entorno
 
-3 Crear variables de entorno
+3 Crear Auth
 
-4 Crear Auth
-
-5 Crear Migraciones
+4 Crear Migraciones
 
 --------------------------------
 

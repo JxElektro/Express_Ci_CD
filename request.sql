@@ -32,3 +32,29 @@ CREATE TABLE client (
   createdAt TIMESTAMP DEFAULT NOW(),
   updatedAt TIMESTAMP DEFAULT NOW()
 );
+
+
+/* Modelo de la Tabla dealership Postman */
+{
+    "name": "Tesla",
+    "address": "123 Main St",
+    "city": "New York"
+ }
+
+/* Modelo de la Tabla car Postman */
+
+{
+    "make": "Tesla",
+    "model": "Model S",
+    "year": 2018,
+    "price": 100000,
+    "dealershipId": 1
+}
+
+/* Modelo de la Tabla client Postman */
+  
+  {
+      "name": "John Doe",
+      "email": "JohnDoe@gmail.com
+      "carId": 1
+  }
