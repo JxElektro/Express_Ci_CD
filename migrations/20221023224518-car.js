@@ -1,18 +1,41 @@
 'use strict';
 
-/** @type {import('sequelize-cli').Migration} */
+const { up } = require("./20221023224456-dealership");
+
 module.exports = {
   async up (queryInterface, Sequelize) {
-    /**
-     * Add altering commands here.
-     *
-     * Example:
-     * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
-     */
+    await queryInterface.createTable('car', {
+      id: {
+        type: Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+      },
+      make: {
+        type: Sequelize.STRING
+      },
+      model: {
+        type: Sequelize.STRING
+      },
+      year: {
+        type: Sequelize.INTEGER
+      },
+      color: {
+        type: Sequelize.STRING
+      },
+      createdAt: {
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.NOW
+      },
+      updatedAt: {
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.NOW
+      }
+    },{
+      tableName: 'car'
+    });
   },
-
-  async down (queryInterface, Sequelize) {
-    /**
+  async down(queryInterface, Sequelize) {
+     /**
      * Add reverting commands here.
      *
      * Example:
@@ -20,3 +43,4 @@ module.exports = {
      */
   }
 };
+

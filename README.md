@@ -21,12 +21,15 @@
 
 8.- se creo el archivo user.js en la carpeta models
 
+9.- se creo el archivo user.js en la carpeta controllers
+
+10.- se hicieron las Authentificaciones
+
+11.- se probaron en en postman
+
 
 ---------------------------------------------------------
 
-Proximos pasos
-
-Auth
 
 Migraciones
 
