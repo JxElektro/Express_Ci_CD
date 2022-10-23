@@ -17,6 +17,11 @@
 
 6.- se crearon variables de entorno
 
+7.- se creo el archivo .gitignore para ignorar los archivos de node_modules
+
+8.- se creo el archivo user.js en la carpeta models
+
+
 ---------------------------------------------------------
 
 Proximos pasos

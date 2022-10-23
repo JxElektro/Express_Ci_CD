@@ -1,8 +1,8 @@
-
 import jwt from "jsonwebtoken";
 import User from "../models/user.js";
 import bcrypt  from 'bcrypt';
 //2 endpoint que permite el registro
+
 export const register = async (req, res) => {
   try {
     const user = await User.create({

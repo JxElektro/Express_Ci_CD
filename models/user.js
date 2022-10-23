@@ -5,6 +5,7 @@ import db from "../config/database.js";
 
 const { DataTypes } = Sequelize;
 
+
 // init user model
 const User = db.define(
   "user",
