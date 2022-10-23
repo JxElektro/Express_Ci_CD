@@ -1,79 +1,80 @@
 // Import Dealership model
 import Dealership from '../models/dealership.js';
 
-
-
-// create a postgres table called dealership with the following columns and data types id - integer - primary key - auto increment ,name - string,address - string,city - string,createdAt - date - default value - current date, updatedAt - date - default value - current date
-
-
-
-
-
-
-
-
-
 //get all the dealerships
-export const getDealerships = (req, res) => {
-  Dealership.findAll()
-    .then(dealerships => res.json({dealerships}))
-    .catch(err => console.log(err));
+export const getDealerships = async (req, res) => {
+  try {
+    const dealerships = await Dealership.findAll();
+  if(!dealerships) {
+    res.status(404).json({ message: 'No dealerships found' });
+    return; 
+  }
+  await res.status(200).json(dealerships);
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 //get a dealership by id
-export const getDealership = (req, res) => {
-  Dealership.findByPk(req.params.id)
-    .then(dealership => res.json(dealership))
-    .catch(err => console.log(err));
+export const getDealership = async (req, res) => {
+  try {
+    const dealership = await Dealership.findByPk(req.params.id);
+  if(!dealership) {
+    res.status(404).json({ message: 'No dealership found with id: ' + req.params.id });
+    return;
+  }
+  await res.status(200).json(dealership);
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 //add a dealership
-export const addDealership = (req, res) => {
+export const addDealership = async (req, res) => {
   try {
-    const { name, address, city } = req.body;
-    Dealership.create({
-      name,
-      address,
-      city
-    })
-      .then(dealership => res.json(dealership))
-      .catch(err => console.log(err));
+    await Dealership.create(req.body);
+    res.json({ message: 'Dealership added successfully' });
   } catch (error) {
     console.log(error);
   }
 }
 
 //update a dealership
-export const updateDealership = (req, res) => {
+export const updateDealership = async (req, res) => {
   try {
-    const { name, address, city } = req.body;
-    Dealership.update({
-      name,
-      address,
-      city
-    }, {
-      where: {
-        id: req.params.id
-      }
-    })
-      .then(dealership => res.json(dealership))
-      .catch(err => console.log(err));
+    const dealership = await Dealership.findByPk(req.params.id);
+  if(!dealership) {
+    res.status(404).json({ message: 'No dealership found with id: ' + req.params.id });
+    return;
+  }
+  await Dealership.update(req.body, {
+    where: {
+      id: req.params.id
+    }
+  });
+  res.json({ message: 'Dealership updated successfully' });
   } catch (error) {
     console.log(error);
   }
 }
 
 //delete a dealership
-export const deleteDealership = (req, res) => {
+export const deleteDealership = async (req, res) => {
   try {
-    Dealership.destroy({
-      where: {
-        id: req.params.id
-      }
-    })
-      .then(dealership => res.json(dealership))
-      .catch(err => console.log(err));
+    const dealership = await Dealership.findByPk(req.params.id);
+  if(!dealership) {
+    res.status(404).json({ message: 'No dealership found with id: ' + req.params.id });
+    return;
+  }
+  await Dealership.destroy({
+    where: {
+      id: req.params.id
+    }
+  });
+  res.json({ message: 'Dealership deleted successfully' });
   } catch (error) {
     console.log(error);
   }
 }
+
+// Path: routes\dealership.js

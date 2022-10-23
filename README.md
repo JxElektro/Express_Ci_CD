@@ -5,13 +5,12 @@
 
 Proximos pasos
 
-1 agregar algunos if de mensaje no encontrado
 
-2 Crear variables de entorno
+1 Crear variables de entorno
 
-3 Crear Auth
+2 Crear Auth
 
-4 Crear Migraciones
+3 Crear Migraciones
 
 --------------------------------
 

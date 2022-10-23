@@ -55,6 +55,6 @@ CREATE TABLE client (
   
   {
       "name": "John Doe",
-      "email": "JohnDoe@gmail.com
+      "email": "JohnDoe@gmail.com",
       "carId": 1
   }
