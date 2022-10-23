@@ -30,3 +30,11 @@
 12.- se crearon 4 archivos de migracion
 
 13.- se llenaron basado en los modelos
+
+-------------------------------------------------
+
+Preguntas para la clase
+
+1.-acerca de  "./config/config.json"   este archivo se configura con las .env que ya teniamos o se crearan nuevas .env para los test?
+
+2.- dentro de las migraciones los datos son solo para bajar columnas o podemos bajar tablas completas?
