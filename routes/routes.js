@@ -12,10 +12,12 @@ import { getClient, getClientById, addClient, updateClient, deleteClient } from 
 // init router
 const router = express.Router();
 
+import { isUserAuthenticated } from '../middlewares/auth.js';
+
 // define routes
 
 // Dealership routes
-router.get('/dealerships', getDealerships);
+router.get('/dealerships', isUserAuthenticated, getDealerships);
 router.get('/dealership/:id', getDealership);
 router.post('/dealership', addDealership);
 router.put('/dealership/:id', updateDealership);
