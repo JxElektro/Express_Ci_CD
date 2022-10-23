@@ -10,7 +10,8 @@ import db from '../config/database.js';
 // init datatypes
 const { DataTypes } = Sequelize;
 
-
+//sync database
+db.sync();
 
 //define schema for the model with a automatic id
 const Dealership = db.define('dealership', {
@@ -28,11 +29,11 @@ const Dealership = db.define('dealership', {
   city: {
     type: DataTypes.STRING
   },
-  createdat: {
+  createdAt: {
     type: DataTypes.DATE,
     defaultValue: Sequelize.NOW
   },
-  updatedat: {
+  updatedAt: {
     type: DataTypes.DATE,
     defaultValue: Sequelize.NOW
   }

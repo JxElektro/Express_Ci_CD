@@ -34,11 +34,11 @@ const Car = db.define(
         key: 'id'
       }
     },
-    createdat: {
+    createdAt: {
       type: DataTypes.DATE,
       defaultValue: sequelize.NOW
     },
-    updatedat: {
+    updatedAt: {
       type: DataTypes.DATE,
       defaultValue: sequelize.NOW
     }
