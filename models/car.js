@@ -27,18 +27,18 @@ const Car = db.define(
     price: {
       type: DataTypes.INTEGER
     },
-    dealershipId: {
+    dealershipid: {
       type: DataTypes.INTEGER,
       references : {
         model: 'dealership',
         key: 'id'
       }
     },
-    createdAt: {
+    createdat: {
       type: DataTypes.DATE,
       defaultValue: sequelize.NOW
     },
-    updatedAt: {
+    updatedat: {
       type: DataTypes.DATE,
       defaultValue: sequelize.NOW
     }
@@ -49,7 +49,7 @@ const Car = db.define(
 export default Car;
   
 
-// create a new car in the database json
+// Example of a model with a foreign key
 /*
 {
   "make": "Toyota",
@@ -57,5 +57,7 @@ export default Car;
   "year": 2019,
   "price": 20000,
   "dealershipId": 1
+  ,
 }
+
 */
