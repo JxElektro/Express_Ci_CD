@@ -8,9 +8,7 @@ import db from "./config/database.js";
 import Router from "./routes/routes.js";
 
 
-
-// Import auth router
-//import authRouter from "./routes/auth.js";
+import authRouter from "./routes/auth.js";
 // Init express
 const app = express(); 
 // use express json
@@ -37,7 +35,9 @@ try {
 // use router integra todo los controllers enpoints
 app.use(Router);
 
-//app.use(authRouter);
+// use auth router
+app.use(authRouter);
 
+// Init server
 app.listen(3001, () => console.log('Servidor corriendo en localhost:3001...'))
 
