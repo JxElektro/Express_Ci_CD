@@ -9,9 +9,7 @@
     "test": "cross-env ENV=test mocha ./__tests__/*",
     "pretest": "cross-env NODE_ENV=test npm run db:reset",
     "db:reset": "npx sequelize-cli db:migrate",
-    "db:drop:create": "npx sequelize-cli db:drop && npx sequelize-cli db:create",
     "db:create:test": "cross-env NODE_ENV=test npx sequelize-cli db:create"
-
   },
   "author": "",
   "license": "ISC",
@@ -25,7 +23,8 @@
     "nodemon": "^2.0.20",
     "pg": "^8.8.0",
     "sequelize": "^6.25.2",
-    "sequelize-cli": "^6.5.1"
+    "sequelize-cli": "^6.5.1",
+    "test": "^3.2.1"
   },
   "devDependencies": {
     "chai": "^4.3.6",

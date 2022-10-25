@@ -2,10 +2,14 @@ import request from 'supertest';
 import chai from "chai";
 import app from '../app.js';
 import User from '../models/user.js';
+import { before } from 'mocha';
 
 
 const { expect } = chai;
 
+
+
+/*
 describe('Auth - Test', () => {
   
   describe('Check 201 y que sea objeto', () => {
@@ -22,4 +26,4 @@ describe('Auth - Test', () => {
       });
     });
   });
-
+*/
