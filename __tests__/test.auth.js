@@ -1,26 +1,25 @@
 import request from 'supertest';
 import chai from "chai";
-import app from '../src/app.js';
-import User from '../src/models/user.js';
+import app from '../app.js';
+import User from '../models/user.js';
 
 
 const { expect } = chai;
 
+describe('Auth - Test', () => {
+  
+  describe('Check 201 y que sea objeto', () => {
+    it('should register a new user', async () => {
+      const res = await request(app)
+        .post('/auth/register')
+        .send({
+          username: 'test',
+          email: 'test@gmail.com',
+          password: 'test',
+        });
+      expect(res.statusCode).to.equal(201);
+      expect(res.body).to.be.an('object');
+      });
+    });
+  });
 
-
-// test de prueba
-it('should allow to create users', async () => {
-  const payload = {
-    'name': 'teast',
-    'email': 'josae@email.com',
-    'password': '123456'
-  }
-  const { body, status } = await request(app).post('/auth/register').send(payload);
-  expect(status).to.equal(201);
-
-  // check the userId
-  expect(body).to.have.property('userId');
-  const userId = body.userId;
-  const user = await User.findByPk(userId);
-  expect(user.name).to.equal(payload.name);
-});
