@@ -5,8 +5,12 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "test": "cross-env ENV=test mocha ./__tests__/*",
+    "start": "nodemon app.js",
+    "pretest": "cross-env ENV=test npm run db:reset",
+    "db:reset": "npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate",
+    "db:create:test": "cross-env ENV=test npx sequelize-cli db:create"
+
   },
   "author": "",
   "license": "ISC",
@@ -16,9 +20,15 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "jsonwebtoken": "^8.5.1",
+    "mocha": "^10.1.0",
     "nodemon": "^2.0.20",
     "pg": "^8.8.0",
     "sequelize": "^6.25.2",
     "sequelize-cli": "^6.5.1"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "cross-env": "^7.0.3",
+    "supertest": "^6.3.1"
   }
 }

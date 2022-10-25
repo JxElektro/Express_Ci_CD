@@ -31,10 +31,8 @@
 
 13.- se llenaron basado en los modelos
 
+14.- Se creo la carpeta __test__ para las pruebas
+
+15.- se creo el archivo teardown.js para limpiar la base de datos al terminar las pruebas
 -------------------------------------------------
 
-Preguntas para la clase
-
-1.-acerca de  "./config/config.json"   este archivo se configura con las .env que ya teniamos o se crearan nuevas .env para los test?
-
-2.- dentro de las migraciones los datos son solo para bajar columnas o podemos bajar tablas completas?
