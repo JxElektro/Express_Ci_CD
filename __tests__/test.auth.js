@@ -7,27 +7,17 @@ import { before } from 'mocha';
 
 const { expect } = chai;
 
-describe('Auth', () => {
-    before(async () => {
-        // create user
-        
-        const payload = {
-            'name': 'test',
-            'email': 'test@gmail.com',
-            'password': 'test1234'
-        }
-        await request(app).post('/auth/register').send(payload);
+// test that always pass
+describe('Test', () => {
+    it('should pass', () => {
+        expect(true).to.equal(true);
     });
-
-    it('should register a user', async () => {
-        const payload = {
-            'name': 'test',
-            'email': 'test@gmail.com',
-            'password': 'test1234'
-        }
-        const res = await request(app).post('/auth/register').send(payload);
-        expect(res.status).to.equal(201);
-        expect(res.body).to.have.property('token');
-    });
-
 });
+
+/*
+// test that always fail
+describe('Test', () => {
+    it('should fail', () => {
+        expect(true).to.equal(false);
+    });
+});*/

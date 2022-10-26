@@ -2,7 +2,6 @@ import request from 'supertest';
 import app from '../App.js';
 
 before(async () => {  
-
   // create user
   const payload = {
     'name': 'teast',
