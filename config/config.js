@@ -22,7 +22,7 @@ const config = {
     database: process.env.DB_TEST_DB_NAME || 'postgres',
     host:  process.env.DB_TEST_HOST || 'localhost',
     port: process.env.DB_TEST_PORT ||  5432,
-    logging: true,
+    logging: false,
     dialect: process.env.DB_TEST_DIALECT || 'postgres',
   },
   production: {
