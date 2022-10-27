@@ -1,17 +1,15 @@
-name: Express.js CI
+name: Express.js CI #nombre Continuos Integration Express.js
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+  push: # correr push en rama main
+    branches: [ main ] 
+  pull_request: # correr pull_request en rama main
+    branches: [ main ]
+
+env:
+    POSTGRES_HOST: localhost
+    POSTGRES_PORT: 5432
 
 jobs:
-  # linting - analisis de código estatico
-  # analisis de ciber seguridad
-  # code smells sonarcube
-  # checkear que se pueda hacer build
-  # subir builds de docker
-  # notificar a otros lugares
   test:
     runs-on: ubuntu-latest
     services:
@@ -27,15 +25,15 @@ jobs:
           --health-timeout 5s
           --health-retries 5
         ports:
-          - 5432:5432
-  steps:
+            - 5432:5432
+    steps:
     - name: Checkout
       uses: actions/checkout@v3
 
     - name: Setup Node
       uses: actions/setup-node@v1
       with: 
-        node-version: "16.18"
+        node-version: "16.15"
 
     - name: Installing Dependencies # Instalar dependencias
       run: npm i
