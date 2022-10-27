@@ -34,7 +34,7 @@ steps:
 
       
       - name: Setup Node
-        uses: actions/checkout@v1
+        uses: actions/setups-node@v1
         with:
           node-version: "16.18"
       - name: Installing Dependencies
