@@ -28,18 +28,17 @@ jobs:
           --health-retries 5
         ports:
           - 5432:5432
-steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+ steps:
+    - name: Checkout
+      uses: actions/checkout@v3
 
-      
-      - name: Setup Node
-        uses: actions/setups-node@v1
-        with:
-          node-version: "16.18.0"
+    - name: Setup Node
+      uses: actions/setup-node@v1
+      with: 
+        node-version: "16.15"
 
-      - name: Installing Dependencies
-        run: npm i
+    - name: Installing Dependencies # Instalar dependencias
+      run: npm i
 
-        - name: Testin Our App
-        run: npm test
+    - name: Run tests # correr test
+      run: npm test
