@@ -1,0 +1,45 @@
+name: Express.js CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  # linting - analisis de código estatico
+  # analisis de ciber seguridad
+  # code smells sonarcube
+  # checkear que se pueda hacer build
+  # subir builds de docker
+  # notificar a otros lugares
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: alcap1990
+          POSTGRES_DB: postgres
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      
+      - name: Setup Node
+        uses: actions/checkout@v1
+        with:
+          node-version: "16.18"
+      
+      - name: Installing Dependencies
+        run: npm i
+
+        - name: Testin Our App
+        run: npm test

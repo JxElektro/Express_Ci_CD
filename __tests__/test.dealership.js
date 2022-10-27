@@ -1,7 +1,6 @@
 import request from 'supertest';
 import chai from 'chai';
 import app from '../app1.js';
-import User from '../models/user.js';
 import getToken from './utils.js';
 import Dealership from '../models/dealership.js';
 import { before } from 'mocha';
