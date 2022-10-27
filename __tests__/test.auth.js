@@ -52,8 +52,7 @@ describe('Test endpoint auth/register', () => {
     expect(body).to.have.property('message');
     expect(body.message).to.equal('Login successfull');
   });
-
-  it("should fail if email is not incorrect", async () => {
+  it("should fail if email is incorrect", async () => {
     const payload = {
       'email': 'unexsitedEmail@email.com',
       'password': '123456'
@@ -67,8 +66,7 @@ describe('Test endpoint auth/register', () => {
     // expect body to have a message
     expect(body.message).contains('No user found with email');
   });
-
-  it("should fail if password is not incorrect", async () => {
+  it("should fail if password is incorrect", async () => {
     const payload = {
       'email': 'josae@email.com',
       'password': 'badPassword'
@@ -77,7 +75,7 @@ describe('Test endpoint auth/register', () => {
       .post('/auth/login')
       .type("json")
       .send(payload);
-    expect(status).to.equal(401);
+    expect(status).to.equal(404);
     // expect body to have a message
     expect(body.message).contains('Invalid Password');
   });

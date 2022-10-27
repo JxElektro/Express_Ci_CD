@@ -34,5 +34,20 @@
 14.- Se creo la carpeta __test__ para las pruebas
 
 15.- se creo el archivo teardown.js para limpiar la base de datos al terminar las pruebas
+
+16.- se creo el archivo test.auth.js para las pruebas de autenticacion
+
+17.- se creo el archivo test.dealership.js para las pruebas de usuarios
+
+18.- se corrieron los test
+
+19.- se creo el archivo de CI
+
+
 -------------------------------------------------
 
+Preguntas para la clase 
+
+1.- Solo me toma un Test
+
+2.- Revisar variables de entorno
