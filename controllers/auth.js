@@ -15,7 +15,9 @@ export const register = async (req, res) => {
       "userId": user.id
     });
   } catch (err) {
-    console.log(err);
+    res.status(400).json({
+      "message": "User not created"
+    });
   }
 }
 
