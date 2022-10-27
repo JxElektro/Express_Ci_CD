@@ -36,8 +36,10 @@ steps:
       - name: Setup Node
         uses: actions/setups-node@v1
         with:
-          node-version: "16.18"
+          node-version: "16.18.0"
+
       - name: Installing Dependencies
         run: npm i
+
         - name: Testin Our App
         run: npm test
