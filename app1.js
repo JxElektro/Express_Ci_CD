@@ -21,7 +21,17 @@ app.use(Router);
 app.use(authRouter);
 
 
-app.listen(3001, () => console.log('Servidor corriendo en localhost:3001...'))
+app.listen(3000, () => {
+  console.log("Server running on port 3000");
+});
+
+// close nodemon
+process.on("SIGINT", () => {
+  db.close();
+  process.exit();
+});
+
+
 
 export default app;
 

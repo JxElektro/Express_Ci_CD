@@ -1,5 +1,5 @@
 import request from 'supertest';
-import app from '../App.js';
+import app from '../app1.js';
 
 before(async () => {  
   // create user
