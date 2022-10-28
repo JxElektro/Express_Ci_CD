@@ -2,7 +2,7 @@ import request from 'supertest';
 import chai from 'chai';
 import app from '../app1.js';
 import User from '../models/user.js';
-import getToken from './utils.js';
+
 
 
 const { expect } = chai;
@@ -11,7 +11,6 @@ const { expect } = chai;
 
 describe('Test endpoint auth/register', () => {
   it('The enpoint has a 201 status and the obj cant be null', async () => {
-    let token = await getToken();
     const payload = {
       'name': 'teast',
       'email': 'test@gmail.com',
