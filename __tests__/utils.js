@@ -4,7 +4,7 @@ import app from '../app1.js';
 async function getToken() {
   const payload = {
     email: 'test@test.com',
-    password: 'test1234'
+    password: '123456'
   };
   const {body} = await request(app).post('/auth/login').send(payload);
   return body.accesstoken;
