@@ -10,4 +10,4 @@ async function getToken() {
   return body.accesstoken;
 }
 
-  export default getToken;
+  export default getToken; 
