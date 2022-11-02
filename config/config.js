@@ -10,10 +10,10 @@ runDotEnv();
 
 const config = {
  development: {
-    username: process.env.DB_DEV_USER || 'postgres',
-    password: process.env.DB_DEV_PASSWORD || 'alcap1990',
-    database: process.env.DB_DEV_DB_NAME|| 'postgres',
-    host: process.env.DB_DEV_HOST || 'localhost',
+    username: process.env.DB_DEV_USER || 'postgress',
+    password: process.env.DB_DEV_PASSWORD || 'exfZPQRrQVbolNGhwNKfvN7GukeabIM2',
+    database: process.env.DB_DEV_DB_NAME|| 'express_j9yk',
+    host: process.env.DB_DEV_HOST || 'dpg-cdhdvhpgp3jpn5afdif0-a',
     dialect: 'postgres',
   },
   test: {
