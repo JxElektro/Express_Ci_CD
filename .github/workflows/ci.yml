@@ -1,7 +1,7 @@
 name: Express.js CI #nombre Continuos Integration Express.js
 on:
-  push: # correr push en rama main
-    branches: [ main ] 
+#  push: # correr push en rama main
+#    branches: [ main ] 
   pull_request: # correr pull_request en rama main
     branches: [ main ]
 
