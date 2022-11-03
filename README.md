@@ -1,48 +1,75 @@
 # DealershipExpress
 
-1.- Se crearon los archivos
-    app.js        // Principal
-    database.js   // Base de datos
+# Migraciones
 
-2.- Se Crearon los archivos
-    models       // maquetas
-    controllers  // acciones
+(++) = Creacion de un Archivo
+(--) = Eliminacion de un Archivo
+(¬¬) = Modificacion de un Archivo
+(=>) = Run de un Archivo
+(xx) = Error
 
-3.- Se creo el archivo
-    rutas // Conexion a postman
+1.- (++) Archivos base - App.js como punto de entrada de la aplicación - database.js para la conexión a la base de datos
 
-4.- se crearon las tablas en la base de datos desde dbeaver
+2.- (++) modelos de la base de datos + /models que contiene los modelos de la base de datos - /controllers que contienen las funciones de los modelos
 
-5.- se creo un archivo llamado request.sql para con ejemplos para postman
+3.- (++) las rutas de la aplicación - /routes que contiene las rutas de la aplicación
 
-6.- se crearon variables de entorno
+4.- (++) las tablas desde dbeaver porque era mas rapido y no se tenia que hacer por consola
 
-7.- se creo el archivo .gitignore para ignorar los archivos de node_modules
+5.- (++) request.sql para con ejemplos practicos para postman
 
-8.- se creo el archivo user.js en la carpeta models
+6.- (++) variables de entorno
 
-9.- se creo el archivo user.js en la carpeta controllers
+7.- (++) .gitignore para ignorar los archivos de node_modules
 
-10.- se hicieron las Authentificaciones
+8.- (++) models/user.js para el modelo de usuario
 
-11.- se probaron en en postman
+9.- (++) controllers/user.js para las funciones del modelo de usuario
 
-12.- se crearon 4 archivos de migracion
+10.- (¬¬) Authentificaciones
 
-13.- se llenaron basado en los modelos
+11.- (=>) Se probaron en en postman
 
-14.- Se creo la carpeta __test__ para las pruebas
+12.- (++) 4 archivos de migracion
 
-15.- se creo el archivo teardown.js para limpiar la base de datos al terminar las pruebas
+13.- (¬¬) Pobladas basado en los modelos
 
-16.- se creo el archivo test.auth.js para las pruebas de autenticacion
+14.- (++) /**test** para las pruebas
 
-17.- se creo el archivo test.dealership.js para las pruebas de usuarios
+15.- (++) teardown.js para limpiar la base de datos al terminar las pruebas
 
-18.- se corrieron los test
+16.- (++) test.auth.js para las pruebas de autenticacion
 
-19.- se creo el archivo de CI
+17.- (xx) test.dealership.js para las pruebas de usuarios ( No Esta Funcionando , creo que no llega el payload)
 
-20.- se creo el archivo de C
+18.- (=>) Test
 
+19.- (++) CI.yml
 
+20.- (++) CD.yml
+
+21.- (++) index.js para el servidor ya que el app.js no funciono
+
+23.- (¬¬) app.js para el servidor se quito el listen y se agrego un console.log(process.env.ENV);
+
+24.- (=>) CI Pass
+
+25.- (=>) CD Pass
+
+26.- (++) usuario de render
+
+27.- (++) proyecto en render
+
+28.- (++) variables de entorno en render
+
+29.- (xx) no funciona el deploy en render
+
+30.- (++) variables de entorno del la base de datos de render a github
+
+31.- (¬¬) config.js con las variables de entorno de render
+
+32.- (=>) Deplpy Render Pass
+
+33.- (=>) Se prueba el deploy desde render y funciona
+
+34.- (++) Conexion a la base de datos de render a postgress 
