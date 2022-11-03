@@ -73,3 +73,13 @@
 33.- (=>) Se prueba el deploy desde render y funciona
 
 34.- (++) Conexion a la base de datos de render a postgress 
+
+![cicd](https://user-images.githubusercontent.com/107572992/199629477-8cd24a11-4672-43ee-a2cf-abfe0172aa60.jpg)
+![Deployment](https://user-images.githubusercontent.com/107572992/199629507-db4cfb4c-c9cd-4c66-9d09-e9fe9d3f9ded.jpg)
+![PostmanDeployment](https://user-images.githubusercontent.com/107572992/199629527-cb30537b-317b-4207-a88c-c12e1b0d6322.png)
+![postgres](https://user-images.githubusercontent.com/107572992/199629539-bd98aa81-04f7-4902-9613-f23ba2284b75.jpg)
+![postgres2](https://user-images.githubusercontent.com/107572992/199629543-49873e33-e2cd-470a-932e-c6b4e19c46bc.jpg)
+
+
+
+
